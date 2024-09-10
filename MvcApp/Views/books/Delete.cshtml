@@ -1,0 +1,37 @@
+﻿@model Book
+
+<div asp-validation-summary="All"></div>
+@* <div asp-validation-summary="ModelOnly"></div>
+<div asp-validation-summary="None"></div> *@
+<form method="Post">
+    <input asp-for="Id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Book</h2></hr>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="Name" class="p-0">Book Name</label>
+            <input asp-for="Name" disabled type="text" class="form-control" />
+            <aspn asp-validation-for="Name" class="text-danger"></aspn>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Orders" class="p-0">Display Order</label>
+            <input asp-for="Orders" disabled type="text" class="form-control" />
+            <aspn asp-validation-for="DisplayOrder" class="text-danger"></aspn>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Amount" class="p-0"> Amount</label>
+            <input asp-for="Amount" disabled type="text" class="form-control" />
+            <aspn asp-validation-for="DisplayOrder" class="text-danger"></aspn>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-danger form-control">Delete</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="books" asp-action="Index" class="btn btn-secondary form-control border"> Back To List</a>
+            </div>
+        </div>
+    </div>
+</form>
